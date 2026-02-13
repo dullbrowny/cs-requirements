@@ -843,16 +843,16 @@ graph TB
     
     START --> TEMPLATE[Select certificate template<br/>e.g., Gas Safety CP12]
     
-    TEMPLATE --> PREFILL[Pre-fill known fields:<br/>- Customer name/address<br/>- Property details<br/>- Previous cert data]
+    TEMPLATE --> PREFILL[Pre-fill known fields:<br/>Customer name/address<br/>Property details<br/>Previous cert data]
     
-    PREFILL --> TECH_COMPLETE[Technician completes on mobile:<br/>- Appliance serial numbers<br/>- Test results<br/>- Safety checks passed/failed]
+    PREFILL --> TECH_COMPLETE[Technician completes on mobile:<br/>Appliance serial numbers<br/>Test results<br/>Safety checks passed/failed]
     
     TECH_COMPLETE --> VALIDATE{All required<br/>fields complete?}
     VALIDATE -->|No| ERROR[Show missing fields<br/>Cannot proceed]
     ERROR --> TECH_COMPLETE
     
     VALIDATE -->|Yes| SIGNATURE[Technician digital signature]
-    SIGNATURE --> CUSTOMER_SIG[Customer signature<br/>(acknowledges receipt)]
+    SIGNATURE --> CUSTOMER_SIG[Customer signature<br/>acknowledges receipt]
     
     CUSTOMER_SIG --> GENERATE[Generate PDF certificate]
     GENERATE --> STORE[Store in customer record]
